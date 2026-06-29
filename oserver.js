@@ -6,6 +6,7 @@ const MenuItems = require('./models/Menu');
 const personRoutes = require('./routes/personRoutes')
 const menuRoutes =require('./routes/menuRoutes')
 const bodyParser =require("body-parser");
+require('dotenv').config();
 app.use(bodyParser.json()); /// store kar lega body.parser me 
 app.get('/',function(req,res){
     res.send("hello world")
@@ -134,8 +135,8 @@ app.use('/menuItems',menuRoutes);
 
 
 
+const PORT =process.env.PORT || 3000;
 
-
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("server is listening...")
 });
